@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carepilot | پلتفرم پایش پس از ترخیص</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4A7C59 0%, #2C5F3F 100%);
+            border-radius: 16px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #1a3a4a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+            border-color: #4A7C59;
+        }
+
+        .card-color-bar {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            margin-bottom: 24px;
+        }
+
+        .card:nth-child(1) .card-color-bar { background: linear-gradient(90deg, #4A7C59 0%, #5D9A6E 100%); }
+        .card:nth-child(2) .card-color-bar { background: linear-gradient(90deg, #3B8C9B 0%, #4FA6B8 100%); }
+        .card:nth-child(3) .card-color-bar { background: linear-gradient(90deg, #B5874F 0%, #D4A574 100%); }
+        .card:nth-child(4) .card-color-bar { background: linear-gradient(90deg, #8B6A9F 0%, #A37FB8 100%); }
+        .card:nth-child(5) .card-color-bar { background: linear-gradient(90deg, #2C5F6F 0%, #3D7A8F 100%); }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .card:nth-child(1) .card-icon { background: rgba(74, 124, 89, 0.1); }
+        .card:nth-child(2) .card-icon { background: rgba(59, 140, 155, 0.1); }
+        .card:nth-child(3) .card-icon { background: rgba(181, 135, 79, 0.1); }
+        .card:nth-child(4) .card-icon { background: rgba(139, 106, 159, 0.1); }
+        .card:nth-child(5) .card-icon { background: rgba(44, 95, 111, 0.1); }
+
+        .card h2 {
+            font-size: 26px;
+            color: #1a3a4a;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #f0f4f8;
+            border: none;
+            border-radius: 8px;
+            color: #1a3a4a;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background: #4A7C59;
+            color: white;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .arrow {
+            transform: translateX(-4px);
+        }
+
+        /* Subsections list (hidden by default, will be used in detail pages) */
+        .subsections {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8eef5;
+        }
+
+        .subsection-item {
+            padding: 8px 0;
+            color: #7a8c9d;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7a8c9d;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .card h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">🏥</div>
+            <h1>Carepilot</h1>
+            <p class="tagline">پلتفرم هوشمند پایش پس از ترخیص برای بیماران پرخطر مزمن</p>
+        </header>
+
+        <!-- Main Cards Grid -->
+        <div class="cards-grid">
+            <!-- Card 1: About -->
+            <div class="card" data-category="about">
+                <div class="card-color-bar"></div>
+                <div class="card-icon">🏥</div>
+                <h2>درباره Carepilot</h2>
+                <p>شناخت هویت، مأموریت و چشم‌انداز پلتفرم</p>
+                <button class="card-btn">
+                    مشاهده بیشتر
+                    <span class="arrow">←</span>
+                </button>
+                <!-- Subsections for reference -->
+                <div class="subsections">
+                    <div class="subsection-item">• Carepilot چیست؟</div>
+                    <div class="subsection-item">• مسئله و ضرورت</div>
+                    <div class="subsection-item">• چشم‌انداز</div>
+                    <div class="subsection-item">• خدمات محصول</div>
+                    <div class="subsection-item">• کاربران و ذی‌نفعان</div>
+                </div>
+            </div>
+
+            <!-- Card 2: How it Works -->
+            <div class="card" data-category="how-it-works">
+                <div class="card-color-bar"></div>
+                <div class="card-icon">⚙️</div>
+                <h2>نحوه عملکرد</h2>
+                <p>جزئیات فنی و فرآیندهای عملیاتی پلتفرم</p>
+                <button class="card-btn">
+                    مشاهده بیشتر
+                    <span class="arrow">←</span>
+                </button>
+                <div class="subsections">
+                    <div class="subsection-item">• معماری و فناوری</div>
+                    <div class="subsection-item">• گردش کار (Workflow)</div>
+                    <div class="subsection-item">• موتور قوانین و تریاژ</div>
+                    <div class="subsection-item">• داشبورد و رابط کاربری</div>
+                    <div class="subsection-item">• یکپارچگی با سیستم‌های بیمارستانی</div>
+                </div>
+            </div>
+
+            <!-- Card 3: Value & Impact -->
+            <div class="card" data-category="value">
+                <div class="card-color-bar"></div>
+                <div class="card-icon">📊</div>
+                <h2>ارزش و اثرگذاری</h2>
+                <p>نتایج و خروجی‌های ملموس برای ذی‌نفعان</p>
+                <button class="card-btn">
+                    مشاهده بیشتر
+                    <span class="arrow">←</span>
+                </button>
+                <div class="subsections">
+                    <div class="subsection-item">• ارزش برای بیمار</div>
+                    <div class="subsection-item">• ارزش برای پزشک و بیمارستان</div>
+                    <div class="subsection-item">• ارزش برای بیمه‌ها</div>
+                    <div class="subsection-item">• اثرگذاری بر سیستم سلامت</div>
+                    <div class="subsection-item">• شاخص‌ها و KPIs</div>
+                </div>
+            </div>
+
+            <!-- Card 4: Partnership & Growth -->
+            <div class="card" data-category="partnership">
+                <div class="card-color-bar"></div>
+                <div class="card-icon">🤝</div>
+                <h2>مدل همکاری و توسعه</h2>
+                <p>استراتژی‌های کسب‌وکار و رشد</p>
+                <button class="card-btn">
+                    مشاهده بیشتر
+                    <span class="arrow">←</span>
+                </button>
+                <div class="subsections">
+                    <div class="subsection-item">• مدل کسب‌وکار</div>
+                    <div class="subsection-item">• استراتژی پایلوت</div>
+                    <div class="subsection-item">• نقشه راه توسعه</div>
+                    <div class="subsection-item">• فرصت‌های همکاری</div>
+                    <div class="subsection-item">• قابلیت مقیاس‌پذیری</div>
+                </div>
+            </div>
+
+            <!-- Card 5: Trust & Governance -->
+            <div class="card" data-category="trust">
+                <div class="card-color-bar"></div>
+                <div class="card-icon">🔒</div>
+                <h2>اعتماد و حاکمیت</h2>
+                <p>پروتکل‌های امنیتی، اخلاقی و حاکمیتی</p>
+                <button class="card-btn">
+                    مشاهده بیشتر
+                    <span class="arrow">←</span>
+                </button>
+                <div class="subsections">
+                    <div class="subsection-item">• امنیت و حریم خصوصی</div>
+                    <div class="subsection-item">• استانداردها و مقررات</div>
+                    <div class="subsection-item">• اخلاق پزشکی و شفافیت</div>
+                    <div class="subsection-item">• کیفیت و اعتبارسنجی</div>
+                    <div class="subsection-item">• مسئولیت‌پذیری</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Carepilot | ساخته شده برای بهبود مراقبت پس از ترخیص</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add click handlers to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                // Later we'll navigate to detail pages
+                console.log('Navigate to:', category);
+                // window.location.href = category + '.html';
+            });
+        });
+    </script>
+</body>
+</html>
+`
+`````html
+});
+</script>
+</body>
+</html>
