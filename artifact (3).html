@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carepilot | نقشه محتوا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#6b7a3e;
+    --turquoise:#1c8c8c;
+    --copper:#b5652d;
+    --navy:#2b4b5f;
+    --clay:#8a5a44;
+    --bg:#f7f6f3;
+    --text:#2a2a2a;
+    --muted:#6b6b6b;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Vazirmatn', Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    padding:32px 16px;
+  }
+
+  .page{
+    max-width:960px;
+    margin:0 auto;
+  }
+
+  .page-title{
+    font-size:1.9rem;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:6px;
+  }
+
+  .page-sub{
+    text-align:center;
+    font-size:0.85rem;
+    font-weight:400;
+    color:var(--muted);
+    margin-bottom:36px;
+  }
+
+  .section{
+    margin-bottom:34px;
+  }
+
+  .section-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    padding-bottom:6px;
+    border-bottom:2px solid var(--accent);
+  }
+
+  .section-number{
+    font-size:0.75rem;
+    font-weight:700;
+    color:#fff;
+    background:var(--accent);
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .section-title{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--accent);
+  }
+
+  .subtopics{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+    gap:8px;
+  }
+
+  .subtopic{
+    background:#fff;
+    border:1px solid color-mix(in srgb, var(--accent) 25%, #e5e5e5);
+    border-right:3px solid var(--accent);
+    border-radius:6px;
+    padding:8px 12px;
+    font-size:0.82rem;
+    font-weight:500;
+    color:#3a3a3a;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+
+  .subtopic:hover{
+    transform:translateY(-2px);
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+  }
+
+  /* رنگ هر بخش */
+  .sec-1{--accent:var(--turquoise);}
+  .sec-2{--accent:var(--olive);}
+  .sec-3{--accent:var(--copper);}
+  .sec-4{--accent:var(--navy);}
+  .sec-5{--accent:var(--clay);}
+
+  @media(max-width:480px){
+    .page-title{font-size:1.5rem;}
+    .section-title{font-size:1rem;}
+    .subtopics{grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));}
+    .subtopic{font-size:0.78rem; padding:7px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="page-title">Carepilot</div>
+  <div class="page-sub">نقشه محتوا و ساختار موضوعی</div>
+
+  <!-- بخش ۱ -->
+  <div class="section sec-1">
+    <div class="section-header">
+      <span class="section-number">1</span>
+      <span class="section-title">درباره Carepilot</span>
+    </div>
+    <div class="subtopics">
+      <div class="subtopic">Carepilot چیست؟</div>
+      <div class="subtopic">مسئله و ضرورت</div>
+      <div class="subtopic">چشم‌انداز</div>
+      <div class="subtopic">خدمات محصول</div>
+      <div class="subtopic">کاربران و ذی‌نفعان</div>
+    </div>
+  </div>
+
+  <!-- بخش ۲ -->
+  <div class="section sec-2">
+    <div class="section-header">
+      <span class="section-number">2</span>
+      <span class="section-title">نحوه عملکرد</span>
+    </div>
+    <div class="subtopics">
+      <div class="subtopic">Carepilot چگونه کار می‌کند؟</div>
+      <div class="subtopic">مسیر بیمار</div>
+      <div class="subtopic">نقش تیم درمان</div>
+      <div class="subtopic">نقش خانواده و مراقب</div>
+      <div class="subtopic">مدل ارائه خدمت</div>
+    </div>
+  </div>
+
+  <!-- بخش ۳ -->
+  <div class="section sec-3">
+    <div class="section-header">
+      <span class="section-number">3</span>
+      <span class="section-title">ارزش و اثرگذاری</span>
+    </div>
+    <div class="subtopics">
+      <div class="subtopic">ارزش برای بیمار</div>
+      <div class="subtopic">ارزش برای تیم درمان</div>
+      <div class="subtopic">ارزش برای نظام سلامت</div>
+      <div class="subtopic">ارزش برای بیمه‌ها</div>
+      <div class="subtopic">نتایج مورد انتظار</div>
+      <div class="subtopic">شاخص‌های ارزیابی</div>
+    </div>
+  </div>
+
+  <!-- بخش ۴ -->
+  <div class="section sec-4">
+    <div class="section-header">
+      <span class="section-number">4</span>
+      <span class="section-title">مدل همکاری و توسعه</span>
+    </div>
+    <div class="subtopics">
+      <div class="subtopic">پایلوت</div>
+      <div class="subtopic">مدل همکاری با بیمارستان</div>
+      <div class="subtopic">مدل همکاری با دانشگاه</div>
+      <div class="subtopic">مدل همکاری با بیمه</div>
+      <div class="subtopic">مسیر توسعه محصول</div>
+      <div class="subtopic">فرصت سرمایه‌گذاری</div>
+    </div>
+  </div>
+
+  <!-- بخش ۵ -->
+  <div class="section sec-5">
+    <div class="section-header">
+      <span class="section-number">5</span>
+      <span class="section-title">اعتماد و حاکمیت</span>
+    </div>
+    <div class="subtopics">
+      <div class="subtopic">محدودیت‌های محصول</div>
+      <div class="subtopic">مسئولیت‌های بالینی</div>
+      <div class="subtopic">حریم خصوصی</div>
+      <div class="subtopic">امنیت داده</div>
+      <div class="subtopic">اخلاق حرفه‌ای</div>
+      <div class="subtopic">پرسش‌های متداول</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
