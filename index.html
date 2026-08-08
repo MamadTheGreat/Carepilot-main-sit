@@ -34,19 +34,16 @@
     margin:0 auto;
   }
 
-  .page-title{
-    font-size:1.9rem;
-    font-weight:800;
+  .page-header{
     text-align:center;
-    margin-bottom:6px;
+    margin-bottom:36px;
   }
 
-  .page-sub{
-    text-align:center;
-    font-size:0.85rem;
-    font-weight:400;
-    color:var(--muted);
-    margin-bottom:36px;
+  .page-header img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
   }
 
   .section{
@@ -116,7 +113,6 @@
   .sec-6{--accent:var(--plum);}
 
   @media(max-width:480px){
-    .page-title{font-size:1.5rem;}
     .section-title{font-size:1rem;}
     .subtopics{grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));}
     .subtopic{font-size:0.78rem; padding:7px 10px;}
@@ -127,8 +123,9 @@
 
 <div class="page">
 
-  <div class="page-title">Carepilot</div>
-  <div class="page-sub">نقشه محتوا و ساختار موضوعی</div>
+  <div class="page-header">
+    <img src="assets/a14ca1eb-d2e7-4fea-8aef-eddeee6250a1.png" alt="Carepilot">
+  </div>
 
   <!-- بخش ۱ -->
   <div class="section sec-1">
