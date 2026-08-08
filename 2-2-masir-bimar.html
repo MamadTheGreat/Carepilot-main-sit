@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسیر بیمار | Carepilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#6b7a3e;
+    --bg:#f7f6f3;
+    --text:#2a2a2a;
+    --muted:#5c5c5c;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Vazirmatn', Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.9;
+    padding:32px 16px 60px;
+  }
+
+  .page{
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.82rem;
+    font-weight:500;
+    color:var(--accent);
+    text-decoration:none;
+    margin-bottom:24px;
+  }
+
+  .back-link:hover{
+    text-decoration:underline;
+  }
+
+  .breadcrumb{
+    font-size:0.75rem;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+
+  .page-title{
+    font-size:1.7rem;
+    font-weight:800;
+    color:var(--accent);
+    border-bottom:3px solid var(--accent);
+    padding-bottom:12px;
+    margin-bottom:28px;
+  }
+
+  .block{
+    margin-bottom:26px;
+  }
+
+  .block-title{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:8px;
+    padding-right:10px;
+    border-right:3px solid var(--accent);
+  }
+
+  .block-text{
+    font-size:0.92rem;
+    font-weight:400;
+    color:var(--text);
+    padding-right:13px;
+  }
+
+  .block-text + .block-text{
+    margin-top:10px;
+  }
+
+  .closing{
+    margin-top:36px;
+    padding:18px 20px;
+    background:color-mix(in srgb, var(--accent) 8%, #fff);
+    border-radius:8px;
+    border-right:4px solid var(--accent);
+    font-size:0.92rem;
+    font-weight:500;
+  }
+
+  @media(max-width:480px){
+    .page-title{font-size:1.35rem;}
+    .block-title{font-size:0.95rem;}
+    .block-text, .closing{font-size:0.86rem;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <a href="index.html" class="back-link">→ بازگشت به صفحه اصلی</a>
+  <div class="breadcrumb">بخش ۲ / نحوه عملکرد</div>
+
+  <h1 class="page-title">مسیر بیمار</h1>
+
+  <div class="block">
+    <div class="block-text">مسیر بیمار در Carepilot، یک تجربه دیجیتال طراحی‌شده برای کاهش اضطراب پس از ترخیص و تقویت خودمراقبتی است. این مسیر به‌گونه‌ای تنظیم شده که در هر لحظه، بیمار بداند در کجای فرآیند درمان قرار دارد و چه اقداماتی برای سلامت او ضروری است. این سفر از لحظه خروج از بیمارستان آغاز شده و تا دستیابی به پایداری وضعیت سلامت ادامه می‌یابد.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">شناسایی بیمار واجد شرایط</div>
+    <div class="block-text">در مرحله پایلوت، فرآیند مراقبت با شناسایی بیماران واجد شرایط در مرکز درمانی آغاز می‌شود. تیم درمان مستقر در بیمارستان، بر اساس پروتکل‌های بالینی از پیش تعریف شده و سطح ریسک بیماری (مانند نارسایی قلبی یا COPD)، بیمارانی را که بیشترین سود را از پیگیری پس از ترخیص می‌برند، انتخاب می‌کند. این انتخاب هدفمند باعث می‌شود Carepilot برای افرادی که در معرض خطر بیشتری برای بستری مجدد هستند، فعال شود.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">فعال‌سازی بیمار در Carepilot</div>
+    <div class="block-text">پس از شناسایی، بیمار برای استفاده از Carepilot فعال‌سازی می‌شود. در این مرحله، آموزش کوتاهی درباره نحوه استفاده از سامانه به بیمار و خانواده‌اش ارائه می‌شود تا ابهامی باقی نماند. هدف ما در این گام، ایجاد یک «پل دیجیتال» بین بیمارستان و منزل است؛ به‌گونه‌ای که بیمار از لحظه ترخیص بداند تنها نیست و یک تیم پشتیبان با او همراه است.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">شروع برنامه مراقبت</div>
+    <div class="block-text">به‌محض خروج از بیمارستان، برنامه مراقبتی اختصاصی بیمار در Carepilot فعال می‌شود. این برنامه شامل دستورالعمل‌های ساده، گام‌به‌گام و شخصی‌سازی‌شده است که دقیقا با وضعیت بالینی بیمار مطابقت دارد. این برنامه به بیمار می‌گوید: چه فعالیت‌هایی داشته باشد، چه علائمی را زیر نظر بگیرد و در چه زمان‌هایی وضعیت خود را ثبت کند.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">استفاده روزانه از خدمت</div>
+    <div class="block-text">Carepilot به‌گونه‌ای طراحی شده که کمترین بار ذهنی را برای بیمار داشته باشد. استفاده روزانه از آن، شامل چند دقیقه تعامل کوتاه برای ثبت وضعیت سلامت است. بیمار با چند کلیک ساده یا پاسخ به چند سؤال کوتاه، اطلاعات لازم را وارد می‌کند. این ثبتِ روزانه، برای بیمار یک فعالیتِ آرام‌بخش است که به او کمک می‌کند نسبت به روند بهبودی خود آگاه بماند.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">دریافت راهنمایی و یادآوری</div>
+    <div class="block-text">بیمار در طول مسیر، تنها رها نمی‌شود. Carepilot به‌صورت فعال، یادآوری‌های هوشمند و راهنمایی‌های لازم را برای او ارسال می‌کند. این پیام‌ها شامل یادآوری زمان مصرف دارو، زمان ثبت وضعیت، و توصیه‌های کوتاه آموزشی برای مدیریت شرایط است. این تعاملات فعال، نظم مراقبت را در منزل حفظ کرده و احتمال فراموشی دستورات پزشکی را به حداقل می‌رساند.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">مواجهه با وضعیت عادی یا نگران‌کننده</div>
+    <div class="block-text">Carepilot وضعیت بیمار را به‌صورت مستمر تحلیل می‌کند. اگر اطلاعات ثبت‌شده در محدوده «عادی» باشد، پیام‌های تأیید و تشویق دریافت می‌کند. اما اگر علائم بیمار نشان‌دهنده انحراف از وضعیت پایدار باشد (وضعیت هشدار یا نگران‌کننده)، سامانه بلافاصله این موضوع را شناسایی می‌کند. این سیستم به بیمار اطمینان می‌دهد که وضعیت او به‌صورت علمی و دقیق مانیتور می‌شود.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">پیگیری و دریافت کمک</div>
+    <div class="block-text">در صورت بروز وضعیت نگران‌کننده، زنجیره پیگیری فعال می‌شود. تیم مسئول، شرایط بیمار را بررسی کرده و در صورت نیاز مستقیماً با او یا مراقبش تماس می‌گیرند تا راهنمایی‌های لازم را ارائه دهند یا اقدامات فوری را توصیه کنند. این «لایه امنیتی» به بیمار آرامش خاطر می‌دهد که در صورت بروز هرگونه مشکل، تیم درمان از وضعیت او مطلع است و مداخلات به‌موقع انجام می‌شود.</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">ارزیابی پایان دوره</div>
+    <div class="block-text">پس از تکمیل دوره مراقبت، وضعیت نهایی بیمار در سامانه ارزیابی می‌شود. این مرحله شامل بررسی میزان پیشرفت، کنترل علائم و تصمیم‌گیری برای ادامه یا پایان دوره مراقبت است. اگر بیمار به ثبات کامل رسیده باشد، دوره در سامانه بسته می‌شود. این پایانِ خوشِ یک مسیرِ هوشمند است که با حمایت Carepilot طی شده و به بازیابی سلامت بیمار کمک کرده است.</div>
+  </div>
+
+</div>
+</body>
+</html>
