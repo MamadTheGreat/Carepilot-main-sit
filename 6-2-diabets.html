@@ -1,1 +1,126 @@
-شسی
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسیر دیابت | Carepilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#6b4e71;
+    --bg:#f7f6f3;
+    --text:#2a2a2a;
+    --muted:#6b6b6b;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Vazirmatn', Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 20px;
+    background:#fff;
+    border-bottom:2px solid var(--plum);
+    flex-wrap:wrap;
+  }
+
+  .topbar-title{
+    font-size:1.05rem;
+    font-weight:800;
+    color:var(--plum);
+  }
+
+  .topbar-actions{
+    display:flex;
+    gap:10px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    text-decoration:none;
+    font-family:inherit;
+    font-size:0.85rem;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:6px;
+    border:1px solid var(--plum);
+    background:#fff;
+    color:var(--plum);
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease;
+  }
+
+  .btn:hover{
+    background:var(--plum);
+    color:#fff;
+  }
+
+  .btn-back{
+    border-color:var(--muted);
+    color:var(--muted);
+  }
+
+  .btn-back:hover{
+    background:var(--muted);
+    color:#fff;
+  }
+
+  .viewer-wrap{
+    flex:1;
+    padding:12px 20px 20px;
+  }
+
+  .viewer-frame{
+    width:100%;
+    height:100%;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:#fff;
+  }
+
+  @media(max-width:600px){
+    .topbar{flex-direction:column; align-items:flex-start;}
+    .topbar-actions{width:100%; justify-content:flex-start;}
+    .btn{font-size:0.78rem; padding:7px 12px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-title">مسیر دیابت</div>
+    <div class="topbar-actions">
+      <a href="index.html" class="btn btn-back">بازگشت</a>
+      <a href="assets/Carepilot-Proposal.pdf" download class="btn">دانلود</a>
+      <button class="btn" onclick="printPDF()">پرینت</button>
+    </div>
+  </div>
+
+  <div class="viewer-wrap">
+    <iframe id="pdfFrame" class="viewer-frame" src="assets/diabets.pdf"></iframe>
+  </div>
+
+<script>
+  function printPDF(){
+    var frame = document.getElementById('pdfFrame');
+    frame.contentWindow.focus();
+    frame.contentWindow.print();
+  }
+</script>
+
+</body>
+</html>
