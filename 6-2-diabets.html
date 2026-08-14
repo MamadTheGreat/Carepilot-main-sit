@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مسیر دیابت | Carepilot</title>
+<title>بانک سوالات (مسیر دیابت) | Carepilot</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -84,6 +84,91 @@
     padding:12px 20px 20px;
   }
 
+  .password-screen{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .password-card{
+    width:min(100%, 460px);
+    padding:32px 28px;
+    background:#fff;
+    border:1px solid #e3dfe4;
+    border-radius:14px;
+    box-shadow:0 12px 32px rgba(62, 42, 66, .08);
+    text-align:center;
+  }
+
+  .password-icon{
+    width:56px;
+    height:56px;
+    display:grid;
+    place-items:center;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:#f0eaf1;
+    color:var(--plum);
+    font-size:1.5rem;
+  }
+
+  .password-card h1{
+    margin-bottom:12px;
+    color:var(--plum);
+    font-size:1.3rem;
+  }
+
+  .password-card p{
+    margin-bottom:22px;
+    color:var(--muted);
+    line-height:1.9;
+    font-size:.92rem;
+  }
+
+  .password-form{
+    display:flex;
+    gap:10px;
+  }
+
+  .password-input{
+    flex:1;
+    min-width:0;
+    padding:10px 12px;
+    border:1px solid #cfc8d1;
+    border-radius:6px;
+    font:inherit;
+    direction:ltr;
+    text-align:left;
+    outline:none;
+  }
+
+  .password-input:focus{
+    border-color:var(--plum);
+    box-shadow:0 0 0 3px rgba(107,78,113,.12);
+  }
+
+  .password-submit{
+    background:var(--plum);
+    color:#fff;
+  }
+
+  .password-submit:hover{
+    background:#543b59;
+  }
+
+  .error-message{
+    min-height:24px;
+    margin-top:12px;
+    color:#b42318;
+    font-size:.82rem;
+  }
+
+  .hidden{
+    display:none !important;
+  }
+
   .viewer-frame{
     width:100%;
     height:100%;
@@ -101,24 +186,74 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="topbar-title">مسیر دیابت</div>
+  <section id="passwordScreen" class="password-screen">
+    <div class="password-card">
+      <div class="password-icon" aria-hidden="true">🔒</div>
+      <h1>صفحهٔ محرمانهٔ مسیر دیابت</h1>
+      <p>به دلیل محرمانه بودن اطلاعات این صفحه، برای مشاهدهٔ محتوا رمز عبور را وارد کنید.</p>
+      <form id="passwordForm" class="password-form">
+        <input
+          id="passwordInput"
+          class="password-input"
+          type="password"
+          placeholder="رمز عبور"
+          autocomplete="off"
+          required
+          autofocus
+        >
+        <button type="submit" class="btn password-submit">ورود</button>
+      </form>
+      <div id="errorMessage" class="error-message" role="alert" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div id="protectedContent" class="hidden" style="height:100%;display:flex;flex-direction:column;">
+    <div class="topbar">
+    <div class="topbar-title">بانک سوالات (مسیر دیابت)</div>
     <div class="topbar-actions">
       <a href="index.html" class="btn btn-back">بازگشت</a>
-      <a href="assets/Carepilot-Proposal.pdf" download class="btn">دانلود</a>
+      <a href="assets/diabets.pdf" download class="btn">دانلود</a>
       <button class="btn" onclick="printPDF()">پرینت</button>
+    </div>
+    </div>
+
+    <div class="viewer-wrap">
+      <iframe id="pdfFrame" class="viewer-frame" title="مستندات مسیر دیابت"></iframe>
     </div>
   </div>
 
-  <div class="viewer-wrap">
-    <iframe id="pdfFrame" class="viewer-frame" src="assets/diabets.pdf"></iframe>
-  </div>
-
 <script>
+  // رمز دلخواه خودتان را در این خط جایگزین کنید.
+  const DIABETES_PASSWORD = 'Qwert54321';
+
+  const passwordScreen = document.getElementById('passwordScreen');
+  const protectedContent = document.getElementById('protectedContent');
+  const passwordForm = document.getElementById('passwordForm');
+  const passwordInput = document.getElementById('passwordInput');
+  const errorMessage = document.getElementById('errorMessage');
+  const pdfFrame = document.getElementById('pdfFrame');
+
+  passwordForm.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    if(passwordInput.value === DIABETES_PASSWORD){
+      passwordScreen.classList.add('hidden');
+      protectedContent.classList.remove('hidden');
+      pdfFrame.src = 'assets/Diabetes Question Bank V1.0.pdf';
+      errorMessage.textContent = '';
+      passwordInput.value = '';
+      return;
+    }
+
+    errorMessage.textContent = 'رمز عبور نادرست است.';
+    passwordInput.select();
+  });
+
   function printPDF(){
-    var frame = document.getElementById('pdfFrame');
-    frame.contentWindow.focus();
-    frame.contentWindow.print();
+    if(pdfFrame.contentWindow){
+      pdfFrame.contentWindow.focus();
+      pdfFrame.contentWindow.print();
+    }
   }
 </script>
 
