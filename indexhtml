@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carepilot | نقشه محتوا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style media="not all">
+  :root{
+    --olive:#6b7a3e;
+    --turquoise:#1c8c8c;
+    --copper:#b5652d;
+    --navy:#2b4b5f;
+    --clay:#8a5a44;
+    --plum:#6b4e71;
+    --bg:#f7f6f3;
+    --text:#2a2a2a;
+    --muted:#6b6b6b;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    font-family:'Vazirmatn', Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    padding:32px 16px;
+  }
+
+  .page{
+    max-width:960px;
+    margin:0 auto;
+  }
+
+  .page-header{
+    text-align:center;
+    margin-bottom:36px;
+  }
+
+  .page-header img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+  }
+
+  .section{
+    margin-bottom:34px;
+  }
+
+  .section-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    padding-bottom:6px;
+    border-bottom:2px solid var(--accent);
+  }
+
+  .section-number{
+    font-size:0.75rem;
+    font-weight:700;
+    color:#fff;
+    background:var(--accent);
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .section-title{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--accent);
+  }
+
+  .subtopics{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+    gap:8px;
+  }
+
+  .subtopic{
+    display:block;
+    text-decoration:none;
+    background:#fff;
+    border:1px solid color-mix(in srgb, var(--accent) 25%, #e5e5e5);
+    border-right:3px solid var(--accent);
+    border-radius:6px;
+    padding:8px 12px;
+    font-size:0.82rem;
+    font-weight:500;
+    color:#3a3a3a;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+
+  .subtopic:hover{
+    transform:translateY(-2px);
+    box-shadow:0 3px 8px rgba(0,0,0,0.08);
+  }
+
+  /* رنگ هر بخش */
+  .sec-1{--accent:var(--turquoise);}
+  .sec-2{--accent:var(--olive);}
+  .sec-3{--accent:var(--copper);}
+  .sec-4{--accent:var(--navy);}
+  .sec-5{--accent:var(--clay);}
+  .sec-6{--accent:var(--plum);}
+
+  @media(max-width:480px){
+    .section-title{font-size:1rem;}
+    .subtopics{grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));}
+    .subtopic{font-size:0.78rem; padding:7px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="page-header">
+    <img src="assets/header.webp" alt="Carepilot">
+  </div>
+
+  <!-- بخش ۱ -->
+  <div class="section sec-1">
+    <div class="section-header">
+      <span class="section-number">1</span>
+      <span class="section-title">درباره Carepilot</span>
+    </div>
+    <div class="subtopics">
+      <a href="1-1-chist.html" class="subtopic">Carepilot چیست؟</a>
+      <a href="1-2-masale.html" class="subtopic">مسئله و ضرورت</a>
+      <a href="1-3-cheshmandaz.html" class="subtopic">چشم‌انداز</a>
+      <a href="1-4-khadamat.html" class="subtopic">خدمات محصول</a>
+      <a href="1-5-karbar.html" class="subtopic">کاربران و ذی‌نفعان</a>
+    </div>
+  </div>
+
+  <!-- بخش ۲ -->
+  <div class="section sec-2">
+    <div class="section-header">
+      <span class="section-number">2</span>
+      <span class="section-title">نحوه عملکرد</span>
+    </div>
+    <div class="subtopics">
+      <a href="2-1-amalcard.html" class="subtopic">Carepilot چگونه کار می‌کند؟</a>
+      <a href="2-2-masir-bimar.html" class="subtopic">مسیر بیمار</a>
+      <a href="2-3-naghsh-team.html" class="subtopic">نقش تیم درمان</a>
+      <a href="2-4-naghsh-khanevadeh.html" class="subtopic">نقش خانواده و مراقب</a>
+      <a href="2-5-model-erae.html" class="subtopic">مدل ارائه خدمت</a>
+    </div>
+  </div>
+
+  <!-- بخش ۳ -->
+  <div class="section sec-3">
+    <div class="section-header">
+      <span class="section-number">3</span>
+      <span class="section-title">ارزش و اثرگذاری</span>
+    </div>
+    <div class="subtopics">
+      <a href="3-1-arzesh-bimar.html" class="subtopic">ارزش برای بیمار</a>
+      <a href="3-2-arzesh-team.html" class="subtopic">ارزش برای تیم درمان</a>
+      <a href="3-3-arzesh-nezam.html" class="subtopic">ارزش برای نظام سلامت</a>
+      <a href="3-4-arzesh-bime.html" class="subtopic">ارزش برای بیمه‌ها</a>
+      <a href="3-5-natayej.html" class="subtopic">نتایج مورد انتظار</a>
+      <a href="3-6-shakhess.html" class="subtopic">شاخص‌های ارزیابی</a>
+    </div>
+  </div>
+
+  <!-- بخش ۴ -->
+  <div class="section sec-4">
+    <div class="section-header">
+      <span class="section-number">4</span>
+      <span class="section-title">مدل همکاری و توسعه</span>
+    </div>
+    <div class="subtopics">
+      <a href="4-1-pilot.html" class="subtopic">پایلوت</a>
+      <a href="4-2-hamkari-bimarestan.html" class="subtopic">مدل همکاری با بیمارستان</a>
+      <a href="4-3-hamkari-daneshgah.html" class="subtopic">مدل همکاری با دانشگاه</a>
+      <a href="4-4-hamkari-bime.html" class="subtopic">مدل همکاری با بیمه</a>
+      <a href="4-5-masir-toseh.html" class="subtopic">مسیر توسعه محصول</a>
+      <a href="4-6-sarmayeh.html" class="subtopic">فرصت سرمایه‌گذاری</a>
+    </div>
+  </div>
+
+  <!-- بخش ۵ -->
+  <div class="section sec-5">
+    <div class="section-header">
+      <span class="section-number">5</span>
+      <span class="section-title">اعتماد و حاکمیت</span>
+    </div>
+    <div class="subtopics">
+      <a href="5-1-mahdoodiyat.html" class="subtopic">محدودیت‌های محصول</a>
+      <a href="5-2-masooliyat.html" class="subtopic">مسئولیت‌های بالینی</a>
+      <a href="5-3-harim.html" class="subtopic">حریم خصوصی</a>
+      <a href="5-4-amniyat.html" class="subtopic">امنیت داده</a>
+      <a href="5-5-akhlagh.html" class="subtopic">اخلاق حرفه‌ای</a>
+    </div>
+  </div>
+
+  <!-- بخش ۶ -->
+  <div class="section sec-6">
+    <div class="section-header">
+      <span class="section-number">6</span>
+      <span class="section-title">مستندات</span>
+    </div>
+    <div class="subtopics">
+      <a href="6-1-proposal.html" class="subtopic">پروپوزال جامع محصول</a>
+      <a href="6-2-diabets.html" class="subtopic">بانک سوالات (مسیر دیابت)</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.querySelectorAll('.subtopic').forEach((item, index) => {
+      item.style.setProperty('--item-index', index);
+    });
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    sections.forEach(section => revealObserver.observe(section));
+  } else {
+    sections.forEach(section => section.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
