@@ -34,12 +34,18 @@
     background:#fff;
     border-bottom:2px solid var(--plum);
     flex-wrap:wrap;
+    position:relative;
   }
 
   .topbar-title{
     font-size:1.05rem;
     font-weight:800;
     color:var(--plum);
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    text-decoration:none;
   }
 
   .topbar-actions{
@@ -178,7 +184,15 @@
   }
 
   @media(max-width:600px){
-    .topbar{flex-direction:column; align-items:flex-start;}
+    .topbar{
+      flex-direction:column;
+      align-items:flex-start;
+      padding-top:54px;
+    }
+    .topbar-title{
+      top:12px;
+      left:50%;
+    }
     .topbar-actions{width:100%; justify-content:flex-start;}
     .btn{font-size:0.78rem; padding:7px 12px;}
   }
@@ -209,7 +223,11 @@
 
   <div id="protectedContent" class="hidden" style="height:100%;display:flex;flex-direction:column;">
     <div class="topbar">
-    <div class="topbar-title">بانک سوالات (مسیر دیابت)</div>
+    <a
+      class="topbar-title"
+      href="https://mamadthegreat.github.io/Carepilot-CRE-DP/"
+      aria-label="ورود به سایت مسیر دیابت"
+    >سایت مسیر دیابت</a>
     <div class="topbar-actions">
       <a href="index.html" class="btn btn-back">بازگشت</a>
       <a href="assets/diabets.pdf" download class="btn">دانلود</a>
